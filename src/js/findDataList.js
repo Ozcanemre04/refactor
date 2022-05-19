@@ -2,7 +2,7 @@
 
 
 
-export default function finddatalist(data,displayweather,input){
+export default function finddatalist(data,displayweather){
     let datas=data.list
     for (let i = 0; i < datas.length; i++) {
         let meteo = {
@@ -12,12 +12,15 @@ export default function finddatalist(data,displayweather,input){
             date: datas[i].dt_txt,
             temp: datas[i].main.temp,
             humidity: datas[i].main.humidity,
+           
 
         }
         
+      
         
+         
+     
       displayweather(meteo)
-        
-    input.value = ""
+    
  }
 }

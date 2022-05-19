@@ -34,7 +34,7 @@ img{
 }
 
 .section1{
-    overflow-x: scroll;
+      overflow-x: scroll; 
     background-repeat: no-repeat;
     background-size: cover;
     height: 700px;

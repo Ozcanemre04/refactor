@@ -1,3 +1,5 @@
+//variable
+let body = document.querySelector('body')
 
 let firstweather = document.querySelector('.firstweather')
 let section1 = document.querySelector('.section1')
@@ -6,30 +8,40 @@ let footer = document.querySelector('.footer1')
 let header = document.querySelector('.header')
 let label = document.querySelector('.label1')
 
+let compare = document.querySelector('.compare')
+
 let section2 = document.querySelector('.section2')
 let main2 = document.querySelector('.main2')
 let header2 = document.querySelector('.header2')
 let add = document.querySelector('.add')
 let secondweather = document.querySelector('.secondweather')
 let footer2 = document.querySelector('.footer2')
+//import
+import displayWeather from "./displayWeather"
+import displayWeather2 from "./displayWeather2"
+import displayheadercontent from './displayHeaderContent'
+import finddatalist from './findDataList';
+import DefaultScreen from './DefaultScreen'
+import removeSectionElement from './removeSectionElement'
 
 
 //firstweather
 function weatherFetch() {
+    localStorage.setItem("City", firstweather.value);
     let names = firstweather.value
     fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + names + '&lang=fr&units=metric&cnt=40&appid=319e9dba46be46664ace4a16c7d4f03c')
         .then(resp => resp.json())
         .then(data => {
+            console.log(data.city.name);
             displayheadercontent(data,header,section1,firstweather)
-              finddatalist(data,displayWeather,firstweather)
+            
+              finddatalist(data,displayWeather)
+
+
+          
   })
 
 }
-import displayWeather from "./displayWeather"
-import displayWeather2 from "./displayWeather2"
-import displayheadercontent from './displayHeaderContent'
-
-import finddatalist from './findDataList';
 
 
 firstweather.addEventListener('keyup', (e) => {
@@ -47,7 +59,6 @@ firstweather.addEventListener('keyup', (e) => {
 
 //remove
 
-import removeSectionElement from './removeSectionElement'
 let remove = document.createElement('button')
 remove.className="remove1"
 footer.appendChild(remove)
@@ -59,6 +70,7 @@ remove.addEventListener('click',removeSectionElement)
 
 
 function weatherFetch2() {
+    localStorage.setItem("City2", secondweather.value);
     let names = secondweather.value
 fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + names + '&lang=fr&units=metric&cnt=40&appid=319e9dba46be46664ace4a16c7d4f03c')
         .then(resp => resp.json())
@@ -66,7 +78,7 @@ fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + names + '&lang=fr&
 
            displayheadercontent(data,header2,section2,secondweather)
 
-         finddatalist(data,displayWeather2,secondweather)
+         finddatalist(data,displayWeather2)
 
 
         })
@@ -74,13 +86,21 @@ fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + names + '&lang=fr&
 }
 
 
+add.addEventListener('click', ()=>{
+    if(secondweather.value===""){
+        alert('empty')
+    }
+    else{
+    weatherFetch2()
+     header2.innerHTML = ""
+      main2.innerHTML = ""
+    }
+})
 
 
 
 
 //compare
-let body = document.querySelector('body')
-let compare = document.querySelector('.compare')
 
 compare.className="compare"
 compare.addEventListener('click', () => {
@@ -105,17 +125,7 @@ compare.addEventListener('click', () => {
 
 })
 
-//add
-add.addEventListener('click', ()=>{
-    if(secondweather.value===""){
-        alert('empty')
-    }
-    else{
-    weatherFetch2()
-     header2.innerHTML = ""
-      main2.innerHTML = ""
-    }
-})
+
 
 //remove2
 let remove2 = document.createElement('button')
@@ -124,4 +134,5 @@ footer2.appendChild(remove2)
 remove2.innerText = "remove"
 remove2.addEventListener('click',removeSectionElement)
 
-
+  DefaultScreen(firstweather,weatherFetch,"City")
+  DefaultScreen(secondweather,weatherFetch2,"City2")

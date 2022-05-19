@@ -1,9 +1,6 @@
 let main1 = document.querySelector('.main1')
 export default function displayWeather(data) {
-
-
-
-    let div = document.createElement('div')
+ let div = document.createElement('div')
 
     main1.appendChild(div)
     let img = document.createElement('img')
@@ -25,4 +22,5 @@ export default function displayWeather(data) {
     div.appendChild(date)
     date.innerText = data.date
    
-}
+
+    }

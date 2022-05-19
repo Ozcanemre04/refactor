@@ -4,4 +4,6 @@ export default function removeSectionElement(e){
     
     removeMainChidlren.remove();
     removeHeaderText.textContent = ""
+
+  
 }
