@@ -1,9 +1,4 @@
 let main1 = document.querySelector('.main1')
-
-
-
-
-
 export default function displayWeather(data) {
 
 

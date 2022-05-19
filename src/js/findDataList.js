@@ -1,6 +1,8 @@
-let firstweather = document.querySelector('.firstweather')
+ 
 
-export default function finddatalist(data){
+
+
+export default function finddatalist(data,displayweather,input){
     let datas=data.list
     for (let i = 0; i < datas.length; i++) {
         let meteo = {
@@ -14,10 +16,8 @@ export default function finddatalist(data){
         }
         
         
-      displayWeather(meteo)
+      displayweather(meteo)
         
-    firstweather.value = ""
+    input.value = ""
  }
 }
-
-import displayWeather from "./displayWeather"

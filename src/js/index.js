@@ -1,4 +1,4 @@
-//first
+
 let firstweather = document.querySelector('.firstweather')
 let section1 = document.querySelector('.section1')
 let main1 = document.querySelector('.main1')
@@ -14,29 +14,22 @@ let secondweather = document.querySelector('.secondweather')
 let footer2 = document.querySelector('.footer2')
 
 
-
+//firstweather
 function weatherFetch() {
-    
     let names = firstweather.value
     fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + names + '&lang=fr&units=metric&cnt=40&appid=319e9dba46be46664ace4a16c7d4f03c')
         .then(resp => resp.json())
         .then(data => {
-            displayheadercontent(data)
-              finddatalist(data)
-
-
-        })
+            displayheadercontent(data,header,section1,firstweather)
+              finddatalist(data,displayWeather,firstweather)
+  })
 
 }
-
+import displayWeather from "./displayWeather"
+import displayWeather2 from "./displayWeather2"
 import displayheadercontent from './displayHeaderContent'
+
 import finddatalist from './findDataList';
-
-
-
-
-
-
 
 
 firstweather.addEventListener('keyup', (e) => {
@@ -46,23 +39,23 @@ firstweather.addEventListener('keyup', (e) => {
         }
         else{
         weatherFetch()
-        
-         header.innerHTML = ""
-          main1.innerHTML = ""
+        header.innerHTML = ""
+        main1.innerHTML = ""
         }
     }
 })
 
 //remove
+
 import removeSectionElement from './removeSectionElement'
 let remove = document.createElement('button')
 remove.className="remove1"
 footer.appendChild(remove)
 remove.innerText = "remove"
-
 remove.addEventListener('click',removeSectionElement)
 
-//second
+
+//secondweather
 
 
 function weatherFetch2() {
@@ -71,25 +64,24 @@ fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + names + '&lang=fr&
         .then(resp => resp.json())
         .then(data => {
 
-           displayheadercontent2(data)
+           displayheadercontent(data,header2,section2,secondweather)
 
-         finddatalist2(data)
+         finddatalist(data,displayWeather2,secondweather)
 
 
         })
 
 }
-import displayheadercontent2 from "./displayHeaderContent2";
-import finddatalist2 from "./findDataList2";
+
+
 
 
 
 
 //compare
-
 let body = document.querySelector('body')
-
 let compare = document.querySelector('.compare')
+
 compare.className="compare"
 compare.addEventListener('click', () => {
     section2.classList.toggle('active')
@@ -131,3 +123,5 @@ remove2.className="remove2"
 footer2.appendChild(remove2)
 remove2.innerText = "remove"
 remove2.addEventListener('click',removeSectionElement)
+
+
