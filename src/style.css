@@ -1,0 +1,191 @@
+.main1,.main2{
+    display: flex;
+    gap: 10px;
+    width: fit-content;
+}
+body{
+    background: linear-gradient(90deg, rgba(199,197,226,1) 0%, rgba(105,130,176,1) 40%, rgba(23,44,144,1) 100%);
+    margin: 0;
+    box-sizing: border-box;
+}
+
+div{
+    background: linear-gradient(90deg, rgba(199,197,226,1) 0%, rgba(105,130,176,1) 40%, rgba(23,44,144,1) 100%);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 400px;
+    margin-top: 40px;
+    border-radius: 10px;
+    border: none;
+}
+div:hover{
+    font-weight: bolder;
+    color: white;
+    text-shadow: 0 0 5px white;
+    
+    background: linear-gradient(90deg, rgba(199,197,226,0.3) 0%, rgba(105,130,176,0.6) 40%, rgba(23,44,144,0.8) 100%)
+}
+
+img{
+    flex-basis: 100%;
+}
+
+.section1{
+    overflow-x: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    position: relative;
+}
+
+.section2{
+    display: none;
+    width: 45%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    overflow-x: scroll;
+    position: relative;
+    
+}
+
+.active{
+    display: inline-block;
+}
+.flex{
+    display: flex;
+    
+}
+.header> h2,.header2>h2{
+    position: relative;
+    background: linear-gradient(90deg, rgba(197,216,226,1) 0%, rgba(48,145,194,1) 40%, rgba(23,103,144,1) 100%);
+    top: 10px;
+    text-shadow: 0 0 5px white;
+    left: 0px;
+    color: white;
+    padding: 10px;
+    width: 10%;
+    text-align: center;
+}
+
+
+.label1{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, rgba(197,216,226,1) 0%, rgba(48,145,194,1) 40%, rgba(23,103,144,1) 100%);
+  padding: 8px;
+  color: white;
+  
+  
+  
+}
+.label2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  right: 5%;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, rgba(197,216,226,1) 0%, rgba(48,145,194,1) 40%, rgba(23,103,144,1) 100%);
+  padding: 10px;
+  color: white;
+  width: 30%;
+  
+}
+.add{
+    background-color: transparent;
+    outline: none;
+    padding: 10px;
+    border: 1px solid white;
+    margin-top: 10px;
+    color: white;
+    border-radius: 10px;
+    width: 30%;
+    margin: 0;
+}
+.add:hover{
+    cursor: pointer;
+    color: rgb(4, 4, 71);
+}
+input{
+    background-color: transparent;
+    border: 1px solid white;
+    outline: none;
+color: white;
+padding: 5px;
+border-radius: 10px;
+}
+
+
+.remove1{
+    border: 1px solid white;
+    background: linear-gradient(90deg, rgba(197,216,226,1) 0%, rgba(48,145,194,1) 40%, rgba(23,103,144,1) 100%);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+    width: 30%;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    position: fixed;
+    padding: 10px;
+    text-shadow: 0 0 5px darkgray;
+    border-radius: 10px;
+    
+}
+.remove2{
+    border: 1px solid white;
+    background: linear-gradient(90deg, rgba(197,216,226,1) 0%, rgba(48,145,194,1) 40%, rgba(23,103,144,1) 100%);
+    color: darkgray;
+    font-size: 20px;
+    margin-top: 20px;
+    
+    width: 30%;
+    right: 20%;
+    bottom: 10%;
+    transform: translateX(50%);
+    position: fixed;
+    padding: 10px;
+    text-shadow: 0 0 5px darkgray;
+    border-radius: 10px;
+    
+}
+.remove1:hover, .remove2:hover{
+    cursor: pointer;
+    color: white;
+    background:transparent;
+    text-shadow: 0 0 5px white;
+}
+.remove1:active,.remove2:active{
+    color: rebeccapurple;
+}
+
+.compare{
+    color: darkblue;
+    padding: 10px;
+    width: 200px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, rgba(197,216,226,1) 0%, rgba(48,145,194,1) 40%, rgba(23,103,144,1) 100%);
+    
+
+}
+.compare:hover{
+    color: white;
+    cursor: pointer;
+    
+}
+
